@@ -1,4 +1,5 @@
 package HomeWork.HW4;
+import java.util.Random;
 
 public class HeapSort {
     public void sort(int arr[]) {
@@ -55,11 +56,20 @@ public class HeapSort {
         System.out.println();
     }
 
+    public static int[] getArray(int length, int maxVal){
+        int[] array = new int[length];
+        Random random = new Random(); // creating random value
+        for(int i = 0; i < length; i++){
+            array[i] = random.nextInt(maxVal);
+        }
+        return array;
+    }
     // Main программа
     public static void main(String args[]) {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
-        int n = arr.length;
-
+        int arr[] = getArray(10, 15);
+        System.out.println("Sorted array is");
+        printArray(arr);
+        
         HeapSort ob = new HeapSort();
         ob.sort(arr);
 
